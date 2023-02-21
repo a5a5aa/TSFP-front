@@ -1,0 +1,156 @@
+// app global css in SCSS form
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  transition: .3s;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  // font-family: 'Noto Serif TC', serif;
+  background: #F2EEEB;
+}
+
+.section_1{
+  padding: 50px 0;
+  max-width:1000px;
+  margin:auto;
+}
+
+.section_2{
+  max-width: 1000px;
+  margin:auto;
+}
+
+.section_3{
+  max-width:1000px;
+  margin:auto;
+}
+
+.section_4{
+  max-width:1000px;
+  margin:auto;
+}
+
+.card-scale{
+  scale: .98;
+  cursor: pointer;
+  &:hover{
+    scale: 1;
+  }
+}
+
+.title{
+  h5{
+    padding: 5px;
+  }
+  h6{
+    display: inline;
+    border-top: 1px solid $primary;
+  }
+}
+
+.banner2{
+  .q-img {
+    height: 200px;
+  }
+  @media (min-width:768px) {
+    .q-img {
+      height: 400px;
+    }
+
+  }
+}
+
+.field-title{
+  color: $primary;
+  text-align: center;
+}
+
+.footer{
+  position: relative;
+  background: #121212;
+  height: 200px;
+  box-shadow: 1px 1px 10px black;
+  color: $accent;
+  p {
+    font-size: 14px;
+  }
+  .footer_map{
+    width: 300px;
+    display: none;
+    a {
+      padding: 5px 0;
+      font-size: 8px;
+      color: $accent;
+      display: block;
+    }
+    p {
+      font-weight: bold;
+    }
+  }
+  .subscribe{
+    display: none;
+    .q-input{
+      border-bottom: 1px solid $accent;
+      .q-icon{
+        color: $accent;
+      }
+    }
+  }
+  .footer_center{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  @media (min-width:992px) {
+    .footer_map,
+    .subscribe{
+      display: flex;
+    }
+  }
+}
+
+.copyright{
+  background: black;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+  font-size: 10px;
+  color: $accent;
+}
+
+.swal2-container {
+  z-index: 10000;
+}
+
+.text-overflow1 {
+  // 標題文字超過兩行時，超過的文字隱藏並顯示...
+  display: -webkit-box;
+  // 要使用 webkit-line-clamp 須將 display 轉成 -webkit-box
+  overflow: hidden;
+  // 使超出寬度的文字隱藏
+  // 超出寬度的文字須由上而下垂直排列才可執行 webkit-line-clamp
+  -webkit-box-orient: vertical;
+  // 限制中文字超過 1 行時
+  -webkit-line-clamp: 1;
+  // 有溢出文字時最後方加上省略號...
+  text-overflow: ellipsis;
+}
+
+.text-overflow2 {
+  // 標題文字超過兩行時，超過的文字隱藏並顯示...
+  display: -webkit-box;
+  // 要使用 webkit-line-clamp 須將 display 轉成 -webkit-box
+  overflow: hidden;
+  // 使超出寬度的文字隱藏
+  // 超出寬度的文字須由上而下垂直排列才可執行 webkit-line-clamp
+  -webkit-box-orient: vertical;
+  // 限制中文字超過 2 行時
+  -webkit-line-clamp: 2;
+  // 有溢出文字時最後方加上省略號...
+  text-overflow: ellipsis;
+}
