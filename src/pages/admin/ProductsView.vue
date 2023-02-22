@@ -1,24 +1,26 @@
 <template>
 <q-page>
-  <div class="q-pa-xl row justify-center">
-    <div>
-      <h5>活動管理</h5>
-      <div class="text-right q-mb-md">
-        <q-btn icon="add" class="bg-warning text-white" @click="openDialog(-1)">新增活動</q-btn>
-      </div>
-      <q-table style="width:1024px;" :rows="products" row-key="_id" :columns="columns" class="text-center">
+  <div class="q-px-lg q-py-xl row justify-between" style="width: 100%">
+    <!-- <div class="row justify-between"> -->
+      <h5 class="col-6">活動管理</h5>
+      <q-btn icon="add" class="bg-warning text-white text-right q-mb-md" @click="openDialog(-1)">新增活動</q-btn>
+      <q-table
+      :rows="products"
+      row-key="_id"
+      :columns="columns"
+      class="text-center col-12">
         <template v-slot:body-cell-image='props'>
           <q-td>
-            <q-img :src="props.row.image" width="240px" height="135px"></q-img>
+            <q-img :src="props.row.image" width="160px" height="90px"></q-img>
           </q-td>
         </template>
         <template v-slot:body-cell-status="props">
           <q-td class="text-warning">
-            <q-btn round icon="edit" class="bg-grey" @click="openDialog(props.row._id)"></q-btn>
+            <q-btn round icon="edit" flat @click="openDialog(props.row._id)"></q-btn>
           </q-td>
         </template>
       </q-table>
-    </div>
+    <!-- </div> -->
     <!-- 新增活動表單 -->
     <q-dialog class="q-pa-md q-gutter-sm row" no-shake persistent v-model="form.dialog">
       <q-card class="row q-pa-xl">
@@ -277,7 +279,5 @@ const submit = async () => {
 </script>
 
 <style>
-.swal2-container {
-  z-index: 10000;
-}
+
 </style>

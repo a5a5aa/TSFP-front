@@ -2,13 +2,13 @@
 <div>
   <q-layout view="hHh lpr lFf">
     <q-header reveal elevated>
-      <q-toolbar class="text-accent bg-dark shadow-2 q-px-lg q-pa-xs">
-          <q-btn class="burger" flat @click="drawer = !drawer" round dense icon="menu" />
-          <a style="width:170px" href="/" class="top_logo">
-            <img  style="width:100%" src="../assets/images/logo/logo_top.png">
-          </a>
+      <q-toolbar class="topbar text-accent bg-dark shadow-2 q-px-lg q-pa-xs">
+        <q-btn class="burger" flat @click="drawer = !drawer" round dense icon="menu" />
+        <router-link style="width:170px" to="/" class="topbar_logo">
+          <img  style="width:100%" src="../assets/images/logo/logo_top.png">
+        </router-link>
         <q-space />
-        <q-tabs class="nav_label" shrink>
+        <q-tabs class="topbar_label" shrink>
           <q-route-tab name="首頁" label="首頁" to="/">
           </q-route-tab>
           <span>/</span>
@@ -69,9 +69,9 @@
           &nbsp;
           &nbsp;
         </q-tabs>
-        <q-tabs class="icon_only">
+        <q-tabs class="topbar_right">
           <div>
-            <q-btn class="q-pa-sm" v-if="!isLogin" to="/login" rounded text-accent>
+            <q-btn class="q-pa-sm" v-if="!isLogin" to="/login" rounded text-accent flat>
             <q-icon name="fa-solid fa-user" size="1.3rem"></q-icon>
             </q-btn>
             <q-tooltip class="bg-info">會員登入</q-tooltip>
@@ -83,25 +83,25 @@
             <q-tooltip class="bg-info">管理</q-tooltip>
           </div> -->
           <div>
-            <q-btn class="q-pa-sm" v-if="isLogin && isAdmin" to="/admin" variant="text" rounded text-accent>
+            <q-btn class="q-pa-sm" v-if="isLogin && isAdmin" to="/admin/products" variant="text" rounded text-accent flat>
               <q-icon name="fa-solid fa-user-gear" size="1.3rem"></q-icon>
             </q-btn>
             <q-tooltip class="bg-info">管理</q-tooltip>
           </div>
           <div class="q-mr-sm user_name">
-            <q-btn outline dense class="row flex-center q-px-md" v-if="isLogin && !isAdmin" to="/myaccount" variant="text" text-accent>
+            <q-btn outline dense class="row flex-center q-px-md" v-if="isLogin && !isAdmin" to="/myaccount/orders" variant="text" text-accent>
               <span>嗨!&nbsp;&nbsp;{{ nickname }}</span>
             </q-btn>
             <q-tooltip class="bg-info">會員專區</q-tooltip>
           </div>
           <div class="user_noname">
-            <q-btn class="q-pa-sm" v-if="isLogin && !isAdmin" to="/myaccount/orders" variant="text" rounded text-accent>
+            <q-btn class="q-pa-sm" v-if="isLogin && !isAdmin" to="/myaccount/orders" variant="text" rounded text-accent flat>
               <q-icon name="fa-solid fa-user" size="1.3rem"></q-icon>
             </q-btn>
             <q-tooltip class="bg-info">會員專區</q-tooltip>
           </div>
-          <div class="q-ml-xs">
-            <q-btn class="q-pa-sm" v-if="isLogin" @click="logout" variant="text" rounded text-accent>
+          <div>
+            <q-btn class="q-pa-sm" v-if="isLogin" @click="logout" variant="text" rounded text-accent flat>
               <q-icon name="fa-solid fa-arrow-right-from-bracket" size="1.3rem"></q-icon>
             </q-btn>
             <q-tooltip class="bg-info">登出</q-tooltip>
@@ -231,7 +231,7 @@
                 管理
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple to="/myaccount" v-if="isLogin && !isAdmin" class="text-center row flex-center">
+            <q-item clickable v-ripple to="/myaccount/orders" v-if="isLogin && !isAdmin" class="text-center row flex-center">
               <q-icon name="fa-solid fa-user" size="xs" class="col-2"/>
               <q-item-section class="text-accent col-6" flat>
                 我的會員

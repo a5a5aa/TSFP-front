@@ -1,5 +1,4 @@
 // burger側邊欄
-
 .sidebar{
   @media (min-width:990px) {
     &{
@@ -35,10 +34,10 @@
 }
 
 // MainLayout
-.q-toolbar{
+.topbar {
+  height: 54px;
   display: flex;
-  .top_logo {
-    text-align: center;
+  .topbar_logo {
     position: absolute;
     left: 50%;
     transform: translate(-50%,0);
@@ -46,15 +45,6 @@
     left: 10%;
     }
   }
-  // .top_logo{
-  //   position: absolute;
-  //   left: 50%;
-  //   transform: translate(-50%,0);
-  //   @media (min-width:992px) {
-  //     position: relative;
-  //     left: 65px;
-  //   }
-  // }
   .burger{
     position: relative;
     left: 0;
@@ -64,10 +54,10 @@
       }
     }
   }
-  .nav_label {
+  .topbar_label {
     display: none;
     .q-tab__label{
-      font-size: 16px;
+      font-size: 1rem;
       letter-spacing: 1px;
       font-weight: 400;
     }
@@ -99,12 +89,6 @@
 .admin-sidebar {
   .q-item.q-router-link--active{
   background: #E1BF77;
-  }
-}
-
-.admin-toolbar {
-  .q-btn:before{
-  box-shadow: none;
   }
 }
 

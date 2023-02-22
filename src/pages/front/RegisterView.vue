@@ -3,7 +3,6 @@
     <div class="register text-center q-pa-xl bg-white rounded-borders shadow-5 q-my-xl ">
       <h5>會員註冊</h5>
       <q-form
-        ref="valid"
         @submit.prevent="register"
         class="q-gutter-md q-mt-md"
         >
@@ -32,7 +31,7 @@
             v-model="form.nickname"
             label="暱稱 *"
             lazy-rules
-            :rules="[ rules.required, rules.required ]"
+            :rules="[ rules.required ]"
           >
             <template v-slot:prepend>
               <q-icon name="fa-brands fa-odnoklassniki" />
@@ -86,7 +85,7 @@
         </q-input>
 
         <div class="btn row flex-center">
-          <q-btn class="submit col-4" label="加入會員" type="submit" color="primary" @click="showLoading"/>
+          <q-btn dense class="submit col-4 bg-primary text-white" label="加入會員" type="submit" @click="showLoading"/>
         </div>
         <q-btn class="to_register" label="已有帳號？&nbsp;立即登入&nbsp;" to="/login" flat >
         <q-icon name="fa-solid fa-circle-arrow-right"></q-icon></q-btn>
@@ -105,7 +104,6 @@ import { useQuasar } from 'quasar'
 
 const router = useRouter()
 
-const valid = ref(false)
 const loading = ref(false)
 const $q = useQuasar()
 const timer = ref(0)
@@ -141,7 +139,6 @@ const rules = {
 }
 
 const register = async () => {
-  if (!valid.value) return
   loading.value = true
   try {
     console.log(form)
@@ -150,9 +147,11 @@ const register = async () => {
     await showLoading()
     await setTimeout(() => {
       Swal.fire({
+        width: '18rem',
         icon: 'success',
-        title: '成功',
-        text: '註冊成功'
+        text: '註冊成功',
+        iconColor: '#C5A768',
+        confirmButtonColor: '#2b2b2b'
       })
       router.push('/login')
     }, 2000)
@@ -160,9 +159,11 @@ const register = async () => {
     showLoading()
     setTimeout(() => {
       Swal.fire({
+        width: '18rem',
         icon: 'error',
-        title: '失敗',
-        text: error?.response?.data?.message || '發生錯誤'
+        text: error?.response?.data?.message || '發生錯誤',
+        iconColor: '#C5A768',
+        confirmButtonColor: '#2b2b2b'
       })
     }, 2000)
   }
@@ -176,11 +177,4 @@ const showLoading = () => {
     timer.value = 0
   }, 2000)
 }
-
-// function onBeforeUnmount () {
-//   if (timer !== 0) {
-//     clearTimeout(timer)
-//     $q.loading.hide()
-//   }
-// }
 </script>
