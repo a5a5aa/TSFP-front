@@ -1,10 +1,11 @@
 <template>
   <q-page>
-    <q-sectoin class="banner">
+    <q-sectoin class="banner row">
       <q-img
         src="../../assets/images/brand_top.avif"
         :ratio="21/4"
       />
+      <div class="bg-mask col-12"></div>
     </q-sectoin>
     <section class="section_1 row flex-center q-gutter-sm" style="max-width:1920px;">
       <h5 class="field-title q-mb-xl col-12">講座活動 Lectures & Events</h5>
@@ -31,9 +32,11 @@ const products = reactive([]);
     console.log(products)
   } catch (error) {
     Swal.fire({
+      width: '18rem',
       icon: 'error',
-      title: '失敗',
-      text: error?.response?.data?.message || '發生錯誤'
+      text: error?.response?.data?.message || '發生錯誤',
+      iconColor: '#C5A768',
+      confirmButtonColor: '#2b2b2b'
     })
   }
 })()
