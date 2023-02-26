@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-layout view="1Hh lpr lFf" >
+    <q-layout view="1Hh lpr lFf">
       <q-header reveal unelevated id="bgTrans" style="background:transparent">
         <q-toolbar class="topbar text-accent q-px-lg q-pa-xs">
           <q-btn round class="burger" id="burger2" flat @click="drawer = !drawer" dense icon="menu" />
@@ -212,35 +212,6 @@ const { isLogin, isAdmin, nickname } = storeToRefs(user)
 const { logout } = user
 const drawer = ref(false)
 
-// const tab1 = document.querySelector('#tab1')
-// const menu1 = document.querySelector('#menu1')
-
-// tab1.addEventListener('mouseover', function () {
-//   menu1.style.display = 'block'
-// })
-// onMounted(() => {
-//   const bgTrans = document.getElementById('bgTrans')
-//   window.addEventListener('scroll', () => {
-//     bgTrans.style.backgroundColor = 'transparent'
-//     if (document.documentElement.scrollTop >= 600) {
-//       bgTrans.style.backgroundColor = '#2b2b2b'
-//     }
-//   })
-//   // window.addEventListener('scroll', () => {
-//   //   bgTrans.style.background = 'transparent'
-//   //   if (document.documentElement.scrollTop >= 600) {
-//   //     bgTrans.style.background = '#2b2b2b'
-//   //   }
-//   // })
-//   // burger.addEventListener('click', () => {
-//   //   window.addEventListener('scroll', () => {
-//   //     if (document.documentElement.scrollTop >= 600) {
-//   //       bgTrans.style.background = '#2b2b2b'
-//   //     }
-//   //   })
-//   // })
-// })
-
 onMounted(() => {
   let scrollArea = 0
   const burger = document.querySelector('#burger2')
@@ -250,14 +221,14 @@ onMounted(() => {
     // console.log(scrollArea)
     if (document.documentElement.scrollTop >= 600) {
       scrollArea = document.documentElement.scrollTop
-      bgTrans.style.backgroundColor = '#2b2b2b'
+      bgTrans.style.backgroundColor = '#1d1d1d'
     } else if (scrollArea < 600 && scrollArea !== 0) {
       bgTrans.style.backgroundColor = 'transparent'
     }
   })
   burger.addEventListener('click', (e) => {
     if (scrollArea > 600) {
-      bgTrans.style.backgroundColor = '#2b2b2b'
+      bgTrans.style.backgroundColor = '#1d1d1d'
     }
   })
 })

@@ -1,22 +1,83 @@
 <template>
 <q-page>
-  <!-- banner -->
-  <sectoin class="banner q-mb-xl row flex-center">
-    <video style="height:100vh;" src="../assets/video/咖啡素材2.mp4"  autoplay="true" muted loop >
+  <sectoin class="banner q-mb-xl row flex-center" style="position:relative; top:-50px">
+    <video style="height:100vh; width:100vw; object-fit:cover;" src="../assets/video/專題_影片2.mp4"  autoplay="true" muted loop >
     </video>
-    <div class="bg-mask col-12 column flex-center">
-      <h3>MAUNA COFFEE</h3>
-      <q-btn rounded outline>瞭解更多</q-btn>
+    <div class="bg-mask col-12 row items-center">
+      <div class="index_title">
+        <p>享受片刻寧靜的美好<br>MAUNA COFFEE</p>
+        <q-btn rounded outline to="/about" class="q-mt-xl">瞭解更多</q-btn>
+      </div>
+      <q-btn round flat class="arrow_down" @click="anchor" ><q-icon name="keyboard_arrow_down" size="50px"></q-icon></q-btn>
     </div>
-    <!-- <img
-      style="width:100%"
-      src="https://images.pexels.com/photos/683039/pexels-photo-683039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-      :ratio="16/9"
-    /> -->
   </sectoin>
-  <!-- section_1 - 服務簡介 -->
-  <section class="section_1 home_section_1 row justify-center q-px-xl">
-    <div class="col col-12 col-sm-3 row justify-center">
+  <!-- section - 最新消息 -->
+  <section class="section_1 home_section_1 row q-px-xl">
+    <div class="news q-py-md col-10 col-md-6 shadow-2">
+      <h5 class="text-center q-mb-sm">最新消息 NEWS</h5>
+      <q-list class="q-pa-md" style="max-height:200px; overflow:scroll; ">
+        <q-item clickable>
+          <q-items-section class="q-mr-sm">
+          <span class="text-white bg-warning rounded-borders q-px-xs">新品上市</span>
+          </q-items-section>
+          <q-item-section>
+            <q-item-label >莓好時光風味果茶，一起享受春天的迷人風采！</q-item-label>
+            <q-item-label caption lines="1">在這個春天尋求片刻放縱？啜飲一口帶有酥脆草莓餅乾碎片的莓好時光果茶，盡情享受草莓果香的甜美口感，擠上奶油、撒上草莓碎片，在口中享受草莓派的迷人風味！</q-item-label>
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>2023.01.10</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-separator spaced inset />
+        <q-item clickable>
+          <q-items-section class="q-mr-sm">
+          <span class="text-white bg-warning rounded-borders q-px-xs">重要公告</span>
+          </q-items-section>
+          <q-item-section>
+            <q-item-label >莓好時光風味果茶，一起享受春天的迷人風采！</q-item-label>
+            <q-item-label caption lines="1">在這個春天尋求片刻放縱？啜飲一口帶有酥脆草莓餅乾碎片的莓好時光果茶，盡情享受草莓果香的甜美口感，擠上奶油、撒上草莓碎片，在口中享受草莓派的迷人風味！</q-item-label>
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>2023.01.10</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-separator spaced inset />
+
+        <q-item clickable>
+          <q-items-section class="q-mr-sm">
+          <span class="text-white bg-warning rounded-borders q-px-xs">新品上市</span>
+          </q-items-section>
+          <q-item-section>
+            <q-item-label >莓好時光風味果茶，一起享受春天的迷人風采！</q-item-label>
+            <q-item-label caption lines="1">在這個春天尋求片刻放縱？啜飲一口帶有酥脆草莓餅乾碎片的莓好時光果茶，盡情享受草莓果香的甜美口感，擠上奶油、撒上草莓碎片，在口中享受草莓派的迷人風味！</q-item-label>
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>2023.01.10</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-separator spaced inset />
+
+        <q-item clickable>
+          <q-items-section class="q-mr-sm">
+          <span class="text-white bg-warning rounded-borders q-px-xs">新品上市</span>
+          </q-items-section>
+          <q-item-section>
+            <q-item-label >莓好時光風味果茶，一起享受春天的迷人風采！</q-item-label>
+            <q-item-label caption lines="1">在這個春天尋求片刻放縱？啜飲一口帶有酥脆草莓餅乾碎片的莓好時光果茶，盡情享受草莓果香的甜美口感，擠上奶油、撒上草莓碎片，在口中享受草莓派的迷人風味！</q-item-label>
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>2023.01.10</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </div>
+    <!-- <div class="col col-12 col-sm-3 row justify-center">
       <q-card class="my-card column items-center">
         <img src="../assets/images/coffee-rounded.png">
         <q-card-section>
@@ -52,9 +113,9 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit quae maxime sed voluptatum culpa iure placeat alias eveniet laboriosam!
         </q-card-section>
       </q-card>
-    </div>
+    </div> -->
   </section>
-  <!-- section_2 - 品牌簡介 -->
+  <!-- section - 品牌簡介 -->
   <section class="home_section_2">
     <q-card class="my-card row flex-center q-mx-xl" style="max-width:1000px;">
       <img class="col-md-6" src="../assets/images/單人座.png">
@@ -64,10 +125,51 @@
       </q-card-section>
     </q-card>
   </section>
-  <!-- section_3 - 活動報名 carousel -->
+  <!-- section - 服務簡介 -->
+  <section class="section_1 home_section_11  row q-px-xl">
+    <div class="col col-12 col-sm-3 row justify-center">
+      <q-card class="my-card column items-center">
+        <img src="../assets/images/coffee-rounded.png">
+        <q-card-section>
+          <div class="text-h6">講座空間</div>
+          <div class="text-subtitle2">lecture space</div>
+        </q-card-section>
+        <q-card-section class="card-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit quae maxime sed
+        </q-card-section>
+      </q-card>
+    </div>
+    <div class="col col-12 col-sm-3 row justify-center">
+      <q-card class="my-card column items-center">
+        <img src="../assets/images/coffee-rounded.png">
+        <q-card-section>
+          <div class="text-h6">單人用餐</div>
+          <div class="text-subtitle2">single seat</div>
+        </q-card-section>
+        <q-card-section class="card-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit quae maxime sed
+        </q-card-section>
+      </q-card>
+    </div>
+    <div class="col col-12 col-sm-3 row justify-center">
+      <q-card class="my-card column items-center">
+        <img src="../assets/images/coffee-rounded.png">
+        <q-card-section>
+          <div class="text-h6">專欄分享</div>
+          <div class="text-subtitle2">great topic</div>
+        </q-card-section>
+
+        <q-card-section class="card-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, fugit quae maxime sed
+        </q-card-section>
+      </q-card>
+    </div>
+  </section>
+  <!-- section - 活動報名 carousel -->
   <section class="section_3 home_section_3">
     <h5 class="text-center q-mb-xl">精選活動 Featured Events</h5>
     <swiper
+      loop=true
       :scrollbar="{ draggable: true }"
       navigation
       :modules="modules"
@@ -87,7 +189,7 @@
       </swiper-slide>
     </swiper>
   </section>
-  <!-- section_3 - 手機版 活動報名 carousel -->
+  <!-- section - 手機版 活動報名 carousel -->
   <section class="phone_carousel" >
     <h5 class="q-mb-xl field-title">精選活動</h5>
     <swiper
@@ -99,7 +201,7 @@
       </swiper-slide>
     </swiper>
   </section>
-  <!-- section_4 - 形象照展示 -->
+  <!-- section - 形象照展示 -->
   <section class="section_4 home_section_4 q-my-xl column flex-center">
     <div class="col-1">
       <div class="photo_box">
@@ -178,7 +280,7 @@
     </div>
   </section>
   <section class="copyright row flex-center">
-    Copyright © 2023 Yu-zhen,Su. All rights reserved.
+    Copyright © 2023 Yu-zhen,Su. 泰山職訓局專題(僅供教學使用)
   </section>
 </q-page>
 </template>
@@ -196,7 +298,16 @@ import 'swiper/css/pagination'
 import ProductCard from '@/components/ProductCard.vue'
 
 const modules = [Navigation, Pagination, Scrollbar, A11y, EffectCoverflow]
-const products = reactive([]);
+const products = reactive([])
+
+const anchor = () => {
+  const height = document.querySelector('.arrow_down').offsetTop + 700
+  window.scroll({
+    top: height,
+    behavior: 'smooth'
+  })
+};
+
 (async () => {
   try {
     const { data } = await api.get('/products')
