@@ -2,7 +2,7 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/IndexLayout.vue'),
     children: [
       {
         path: '',
@@ -13,9 +13,15 @@ const routes = [
           login: false,
           admin: false
         }
-      },
+      }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
       {
-        path: 'login',
+        path: '',
         name: 'login',
         component: () => import('src/pages/front/LoginView.vue'),
         meta: {
@@ -23,19 +29,31 @@ const routes = [
           login: false,
           admin: false
         }
-      },
+      }
+    ]
+  },
+  {
+    path: '/register',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
       {
-        path: 'register',
+        path: '',
         name: 'register',
         component: () => import('src/pages/front/RegisterView.vue'),
         meta: {
-          title: 'MAUNA COFFEE - 新會員註冊',
+          title: 'MAUNA COFFEE - 會員註冊',
           login: false,
           admin: false
         }
-      },
+      }
+    ]
+  },
+  {
+    path: '/reset',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
       {
-        path: 'reset',
+        path: '',
         name: 'reset',
         component: () => import('src/pages/front/ResetPassword.vue'),
         meta: {
@@ -46,10 +64,15 @@ const routes = [
       }
     ]
   },
-
   {
     path: '/myaccount',
     component: () => import('layouts/AccountLayout.vue'),
+    meta: {
+      title: 'MAUNA COFFEE - 會員中心',
+      login: true,
+      admin: false,
+      user: true
+    },
     children: [
       {
         path: 'orders',
@@ -58,7 +81,8 @@ const routes = [
         meta: {
           title: 'MAUNA COFFEE - 我的訂單',
           login: true,
-          admin: false
+          admin: false,
+          user: true
         }
       },
       {
@@ -68,7 +92,8 @@ const routes = [
         meta: {
           title: 'MAUNA COFFEE - 基本資料',
           login: true,
-          admin: false
+          admin: false,
+          user: true
         }
       }
     ]
@@ -198,6 +223,12 @@ const routes = [
   {
     path: '/admin',
     component: () => import('../layouts/AdminLayout.vue'),
+    meta: {
+      title: ' MAUNA COFFEE - 管理員後台 ',
+      login: true,
+      admin: true,
+      user: false
+    },
     children: [
       {
         path: 'products',
@@ -206,7 +237,8 @@ const routes = [
         meta: {
           title: ' MAUNA COFFEE - 商品管理 ',
           login: true,
-          admin: true
+          admin: true,
+          user: false
         }
       },
       {
@@ -216,7 +248,8 @@ const routes = [
         meta: {
           title: ' MAUNA COFFEE - 訂單管理 ',
           login: true,
-          admin: true
+          admin: true,
+          user: false
         }
       },
       {
@@ -226,7 +259,8 @@ const routes = [
         meta: {
           title: ' MAUNA COFFEE - 會員管理 ',
           login: true,
-          admin: true
+          admin: true,
+          user: false
         }
       },
       {
@@ -236,7 +270,8 @@ const routes = [
         meta: {
           title: ' MAUNA COFFEE - 活動訂單管理 ',
           login: true,
-          admin: true
+          admin: true,
+          user: false
         }
       },
       {
@@ -246,7 +281,8 @@ const routes = [
         meta: {
           title: ' MAUNA COFFEE - 文章管理 ',
           login: true,
-          admin: true
+          admin: true,
+          user: false
         }
       }
     ]

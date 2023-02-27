@@ -2,7 +2,7 @@
 <q-layout view="1Hh lpr lFf">
   <q-header reveal elevated>
     <q-toolbar class="topbar text-accent bg-dark shadow-2 q-px-lg q-pa-xs">
-      <q-btn class="burger" flat @click="drawer = !drawer" dense icon="menu" />
+      <q-btn round class="burger" flat @click="drawer = !drawer" dense icon="menu" />
       <router-link style="width:170px" to="/" class="topbar_logo">
         <img  style="width:100%" src="../assets/images/logo/logo_top.png">
       </router-link>
@@ -83,11 +83,15 @@
       </q-tabs>
     </q-toolbar>
   </q-header>
-  <q-sectoin class="banner">
+  <q-sectoin class="banner row q-mt-xl">
     <q-img
-      src="../../src/assets/images/brand_top.avif"
-      :ratio="21/4"
+      src="../assets/images/banner_account.jpg"
+      style="max-height:35vh; width:100vw;"
     />
+    <div class="bg-mask mask-text col-12 column flex-center">
+      <p class="col-2 text-h3">MY ACCOUNT</p>
+      <p class="col-2 text-h5">會員中心</p>
+    </div>
   </q-sectoin>
   <div class="item_bar q-ml-xl">
     <!-- <h5 class="q-mb-lg text-center">會員管理</h5> -->
@@ -161,7 +165,7 @@
                 所有活動
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple to="/myaccount/orders" class="col-6 text-center" v-if="!isAdmin">
+            <q-item clickable v-ripple to="/myaccount/orders" class="col-6 text-center">
               <q-item-section class="text-accent" flat>
                 報名查詢
               </q-item-section>

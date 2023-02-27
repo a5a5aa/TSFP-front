@@ -1,9 +1,9 @@
 <template>
   <div>
     <q-layout view="1Hh lpr lFf" >
-      <q-header reveal elevated class="bg-dark" >
-        <q-toolbar class="topbar text-accent shadow-2 q-px-lg q-pa-xs">
-          <q-btn class="burger" flat @click="drawer = !drawer" dense icon="menu" />
+      <q-header reveal elevated class="bg-dark">
+        <q-toolbar class="topbar text-accent q-px-lg q-pa-xs">
+          <q-btn round class="burger" flat @click="drawer = !drawer" dense icon="menu" />
           <router-link style="width:170px" to="/" class="topbar_logo">
             <img  style="width:100%" src="../assets/images/logo/logo_top.png">
           </router-link>
@@ -122,7 +122,7 @@
                     所有活動
                   </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple  to="/myaccount/orders" class="col-6 text-center" v-if="!isAdmin">
+                <q-item clickable v-ripple  to="/myaccount/orders" class="col-6 text-center">
                   <q-item-section class="text-accent" flat>
                     報名查詢
                   </q-item-section>
@@ -211,13 +211,6 @@ const user = useUserStore()
 const { isLogin, isAdmin, nickname } = storeToRefs(user)
 const { logout } = user
 const drawer = ref(false)
-
-// const tab1 = document.querySelector('#tab1')
-// const menu1 = document.querySelector('#menu1')
-
-// tab1.addEventListener('mouseover', function () {
-//   menu1.style.display = 'block'
-// })
 
 </script>
 
