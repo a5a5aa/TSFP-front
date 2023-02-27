@@ -2,13 +2,16 @@
   <q-page>
     <q-sectoin class="banner row">
       <q-img
-        src="../../assets/images/brand_top.avif"
-        :ratio="21/4"
+        src="../../assets/images/banner_lectures.jpg"
+        style="max-height:35vh; width:100vw;"
       />
-      <div class="bg-mask col-12"></div>
+      <div class="bg-mask mask-text col-12 column flex-center">
+        <p class="col-2 text-h3">EVENTS</p>
+        <p class="col-2 text-h5">講座活動</p>
+      </div>
     </q-sectoin>
     <section class="section_1 row flex-center q-gutter-sm" style="max-width:1920px;">
-      <h5 class="field-title q-mb-xl col-12">講座活動 Lectures & Events</h5>
+      <h5 class="field-title q-mb-xl col-12">－ 所有活動 ALL EVENTS －</h5>
       <div v-for="product in products" :key="product._id">
         <ProductCard class="card-scale card_events" v-bind="product"></ProductCard>
       </div>
