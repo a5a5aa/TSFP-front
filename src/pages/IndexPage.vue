@@ -1,11 +1,11 @@
 <template>
 <q-page>
   <sectoin class="banner row flex-center" style="position:relative; top:-50px">
-    <video style="height:100vh; width:100vw; object-fit:cover;" src="../assets/video/專題_影片2.mp4"  autoplay="true" muted loop >
+    <video style="height:100vh; width:100vw; object-fit:cover;" src="../assets/video/專題_影片2.mp4" autoplay="true" muted loop >
     </video>
     <div class="bg-mask col-12 row items-center">
       <div class="index_title">
-        <p>享受片刻寧靜的美好<br>MAUNA COFFEE</p>
+        <p>一杯咖啡 一個座位<br>享受片刻寧靜的美好</p>
         <q-btn rounded outline to="/about" class="q-mt-xl">瞭解更多</q-btn>
       </div>
       <q-btn round flat class="arrow_down" @click="anchor" ><q-icon name="keyboard_arrow_down" size="50px"></q-icon></q-btn>
@@ -127,7 +127,7 @@
     </q-card>
   </section>
   <!-- section - 服務簡介 -->
-  <section class="section_1 home_section_11  row q-px-xl">
+  <!-- <section class="section_1 home_section_11  row q-px-xl">
     <div class="col col-12 col-sm-3 row justify-center">
       <q-card class="my-card column items-center">
         <img src="../assets/images/coffee-rounded.png">
@@ -165,10 +165,10 @@
         </q-card-section>
       </q-card>
     </div>
-  </section>
+  </section> -->
   <!-- section - 活動報名 carousel -->
   <section class="section_3 home_section_3">
-    <h5 class="text-center q-mb-xl">－ 精選活動 Featured Events －</h5>
+    <h5 class="text-center q-mb-xl">－ 精選活動 FETURED EVENTS －</h5>
     <swiper
       loop=true
       :scrollbar="{ draggable: true }"
@@ -192,7 +192,7 @@
   </section>
   <!-- section - 手機版 活動報名 carousel -->
   <section class="phone_carousel" >
-    <h5 class="q-mb-xl field-title">精選活動</h5>
+    <h5 class="text-center q-mb-xl">－ 精選活動 FETURED EVENTS －</h5>
     <swiper
       navigation
       :modules="modules"
@@ -204,28 +204,30 @@
   </section>
   <!-- section - 形象照展示 -->
   <section class="section_4 home_section_4 q-my-xl row justify-center">
+    <h5 class="text-center q-mb-lg col-md-12">－ MORE DETAILS －</h5>
     <div class="col-12 col-md-4">
-      <div class="photo_box photo_box1">
-        <img src="../assets/images/photo_3-2.jpg">
-        <div class="mask text-center row flex-center">介紹1</div>
+      <div class="photo_box1 q-pb-md q-px-sm">
+        <q-img :src="p2[0]?.img">
+        <div class="mask absolute-full flex flex-center">{{ p2[0]?.name }}</div>
+        </q-img>
       </div>
-      <div class="photo_box photo_box2">
-        <img src="../assets/images/photo_5.jpg">
-        <div class="mask text-center row flex-center">介紹2</div>
+      <div class="q-pb-md q-px-sm photo_box2">
+        <q-img :src="p1[0]?.img"><div class="mask absolute-full flex flex-center">{{ p1[0]?.name }}</div>
+        </q-img>
       </div>
     </div>
-    <div class="col-12 photo_box col-md-4 photo_box3">
-      <img class="col-md-6 " src="../assets/images/lecture-room.jpg">
-      <div class="mask text-center row flex-center">介紹3</div>
+    <div class="col-12 col-md-4 photo_box3 q-pb-md q-px-sm">
+      <q-img class="col-md-6" :src="p2[1]?.img"><div class="mask absolute-full flex flex-center">{{ p2[1]?.name }}</div>
+      </q-img>
     </div>
     <div class="col-12 col-md-4">
-      <div class="photo_box photo_box4">
-        <img src="../assets/images/photo_4.jpg">
-        <div class="mask text-center row flex-center">介紹4</div>
+      <div class="photo_box2 q-pb-md q-px-sm">
+        <q-img :src="p1[1]?.img"><div class="mask absolute-full flex flex-center">{{ p1[1]?.name }}</div>
+        </q-img>
       </div>
-      <div class="photo_box photo_box5">
-        <img src="../assets/images/photo_5.jpg">
-        <div class="mask text-center row flex-center">介紹5</div>
+      <div class="photo_box1 q-pb-md q-px-sm">
+        <q-img :src="p2[2]?.img"><div class="mask absolute-full flex flex-center">{{ p2[2]?.name }}</div>
+        </q-img>
       </div>
     </div>
   </section>
@@ -239,17 +241,18 @@
             <router-link class="col-6" to="/">回首頁</router-link>
             <router-link class="col-6" to="/menu">餐飲介紹</router-link>
             <router-link class="col-6" to="/about">品牌故事</router-link>
-            <router-link class="col-6" to="/about/location">線上MENU</router-link>
-            <router-link class="col-6" to="/products">所有活動</router-link>
+            <router-link class="col-6" to="/" >線上MENU</router-link>
+            <router-link class="col-6" to="/products">講座活動</router-link>
             <router-link class="col-6" to="/about/location">門市位址</router-link>
             <router-link class="col-6" to="/articles">專欄好文</router-link>
+            <router-link to="/myaccount/orders">會員專區</router-link>
           </div>
           <div class="col-6 q-pl-md">
             <p>支援服務</p>
             <router-link to="/myaccount/orders">報名查詢</router-link>
-            <router-link to="/servicce">常見問題</router-link>
+            <router-link to="/service">常見問題</router-link>
             <router-link to="/service/contactus">聯絡我們</router-link>
-            <router-link to="/privacy-policy">隱私權政策</router-link>
+            <router-link to="/">隱私權政策</router-link>
           </div>
         </div>
       </div>
@@ -271,22 +274,17 @@
             <q-icon name="send" class="cursor-pointer q-px-sm" />
           </template>
         </q-input>
-        <!-- <div class="q-gutter-sm q-mt-md" style="width:100%"  >
-          <q-icon name="fa-brands fa-instagram" size="1rem"></q-icon>
-          <q-icon name="fa-brands fa-facebook" size="1rem"></q-icon>
-          <q-icon name="fa-brands fa-twitter" size="1rem"></q-icon>
-        </div> -->
       </div>
     </div>
   </section>
   <section class="copyright row flex-center">
-    Copyright © 2023 YU-ZHEN,SU. 泰山職訓111-2期末專題(僅供學術使用)
+    泰山職訓前端網頁專題(僅作學術使用) by SU-YU-ZHEN
   </section>
 </q-page>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, onMounted } from 'vue'
 import { api } from '../boot/axios'
 import Swal from 'sweetalert2'
 import { Swiper, SwiperSlide } from 'swiper/vue'
@@ -306,6 +304,52 @@ const anchor = () => {
     top: height,
     behavior: 'smooth'
   })
+}
+
+const photos1 = reactive([
+  { name: '1', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485819/PHOTO/photo_3-2_usnirn.jpg' },
+  { name: '2', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485816/PHOTO/photo_5_cw4rk6.jpg' },
+  { name: '3', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485815/PHOTO/photo_4-3_wtnhhe.jpg' },
+  { name: '4', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485822/PHOTO/photo_5-2_tseryz.jpg' },
+  { name: '5', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485824/PHOTO/photo_4-4_gmhled.jpg' },
+  { name: '6', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485823/PHOTO/photo_5-3_tguroh.jpg' },
+  { name: '7', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677492633/PHOTO/36ebb17a51038145934b654602c6066d_y7n8hl.jpg' }
+])
+const photos2 = reactive([
+  { name: '8', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485814/PHOTO/photo_3_rbrlqp.jpg' },
+  { name: '9', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485815/PHOTO/lecture-room_bor4h4.jpg' },
+  { name: '10', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677485821/PHOTO/rizky-subagja-1k7TnX5GAww-unsplash_hqgzgf.jpg' },
+  { name: '11', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677492446/PHOTO/zarak-khan-69ilqMz0p1s-unsplash_e0m3up.jpg' },
+  { name: '12', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677492546/PHOTO/b46eb6696802024e14c801314dd2a241_f0vcsm.jpg' },
+  { name: '13', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677492633/PHOTO/shopping-cart_u1prd2.jpg' },
+  { name: '14', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677492633/PHOTO/c816ff60b3e18a1ccd2ba0e10eaa5f9a_siazim.jpg' },
+  { name: '15', img: 'https://res.cloudinary.com/dwcwzhv3w/image/upload/v1677492633/PHOTO/cafe-7454951_1280_ng4fv4.jpg ' }
+])
+const p1 = reactive([])
+const p2 = reactive([])
+
+onMounted(() => {
+  change()
+  setInterval(() => {
+    photos1.push(...p1)
+    photos2.push(...p2)
+    p1.splice(0, p1.length)
+    p2.splice(0, p2.length)
+    change()
+  }, 15000)
+})
+
+const change = () => {
+  for (let i = 0; i <= 6; i++) {
+    const pp = Math.floor(Math.random() * photos1.length)
+    p1.push(photos1[pp])
+    photos1.splice(pp, 1)
+  }
+  for (let i = 0; i <= 7; i++) {
+    const pp = Math.floor(Math.random() * photos2.length)
+    p2.push(photos2[pp])
+    photos2.splice(pp, 1)
+  }
 };
 
 (async () => {

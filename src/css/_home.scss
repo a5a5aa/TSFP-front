@@ -1,10 +1,3 @@
-// .bg-opacity-7{
-//   background: rgba(0,0,0,.7);
-//   // background: none;
-//   z-index:1000;
-// }
-
-
 // 1 - 服務簡介
 .home_section_1{
   background: url(../assets//images/咖啡包.png) no-repeat;
@@ -96,21 +89,15 @@
 .home_section_3{
   display: none;
   @media (min-width:768px) {
-  display: block;
-  padding: 20px 10px;
-  q-card{
-    width: 500px;
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: #636363;
-  }
-  // .q-item--dense {
-  //   padding: 0;
-  // }
-  // .q-item{
-  //   padding: 0;
-  // }
+    display: block;
+    padding: 20px 10px;
+    q-card{
+      width: 500px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #636363;
+    }
   }
 }
 
@@ -125,54 +112,38 @@
   }
 }
 
-// 4 - 照片展示區
+// 照片展示區
 .home_section_4{
-  // height: 600px;
-  padding: 80px 10px 50px 10px;
-    width: 100%;
-    img{
-      object-fit: cover;
+  padding: 80px 30px 50px 30px;
+  width: 100%;
+    .q-img{
       height: 100%;
       width: 100%;
-      // margin: 1% 0;
       .mask{
-        background: rgba(0,0,0,.5);
-        width: 100%;
-        height: 100%;
-        display: none;
         font-size: 1.5rem;
         color: $accent;
+        opacity: 0;
+        transition: .3s;
       }
-      &:hover{
-        .mask{
-          display: flex;
+      &:hover {
+        .mask {
+          opacity: 1;
+          transition: .3s;
         }
       }
-    }
-  .photo_box3 {
-    height: 600px;
-    // padding: 5px 10px;
   }
+
   .photo_box1{
+    position: relative;
     height: 370px;
   }
+
   .photo_box2{
+    position: relative;
     height: 230px;
   }
-  // .photo_box1,
-  // .photo_box2,
-  // .photo_box4,
-  // .photo_box5{
-  //   height: 350px;
-  // }
-  // .photo_box3{
-  //   height: 100%;
-  // }
-  @media (min-width:1024px) {
-    margin: auto;
-    flex-direction: row;
-    .col-1{
-      width: calc(100% / 3);
-    }
+  .photo_box3 {
+    position: relative;
+    height: 600px;
   }
 }
